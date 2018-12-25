@@ -1,0 +1,47 @@
+@@include('_head.html', {"title": "Home page"})
+
+<!--HEADER/-->
+@@include('../modules/header/header.html', {"menu_item_current": "home", "user_item": "logged", "user_item": "not_logged"})
+<!--/HEADER-->
+
+<!--MAIN/-->
+<main class="main">
+	<div class="section">
+		<div class="row row_wrp row_col-middle">
+			<div class="col-6">
+				
+			</div>
+			<div class="col-6">
+				<form action="/subscribe.php" method="POST" class="form">
+					<div class="row">
+						<div class="col-12">
+							<div class="form__field">
+								<input type="text" name="email" data-type="email" data-required="true" placeholder="Ваш E-mail" class="form__text-input" value="">
+								<div class="field-error-tip" data-error-text-2="Введите корректный e-mail">Введите ваш e-mail</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<button type="submit" class="form__submit btn">Получить курс бесплатно</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+<!--/MAIN-->
+
+<!--FOOTER/-->
+@@include('../modules/footer/footer.html')
+<!--/FOOTER-->
+
+<!--POPUPs/-->
+@@include('../modules/popup/popup.html')
+<!--/POPUPs-->
+
+@@include('_javascript.html')
+
+</body>
+</html>

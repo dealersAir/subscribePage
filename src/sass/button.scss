@@ -1,0 +1,122 @@
+@import "variables";
+@import "functions";
+@import "extends";
+@import "mixins";
+
+%btn{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	color: #FFF;
+	padding: 0 15px;
+	height: 43px;
+	line-height: normal;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: bottom;
+	border: none;
+	background: $bk;
+	user-select: none;
+	position: relative;
+	transition: .5s;
+	span{
+		display: block;
+		width: 100%;
+	}
+}
+
+%btn-icon{
+	display: block;
+	content: "";
+	position: absolute;
+	top: 50%;
+}
+
+//default btn
+.btn{
+	@extend %btn;
+	width: 150px;
+}
+
+//arrow btn
+.arrow-btn{
+	@extend %btn;
+	padding-right: 43px;
+
+	&:after{
+		@extend %btn-icon;
+		width: 15px;
+		height: 16px;
+		right: 15px;
+		margin-top: -8px;
+	}
+}
+
+//plus btn
+.plus-btn{
+	@extend %btn;
+	padding-left: 55px;
+	border-radius: 32px;
+	
+	&:after{
+		@extend %btn-icon;
+		width: 32px;
+		height: 32px;
+		left: 6px;
+		margin-top: -16px;
+	}
+}
+
+
+/*link*/
+.link{
+	text-decoration: none;
+	border-bottom: 2px solid $be;
+	transition: .5s;
+	&:hover{
+		border-bottom-color: transparent;
+	}
+}
+
+/*paginate*/
+.paginate{
+	list-style: none;
+	text-align: center;
+	&__item{
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 3px;
+	}
+	&__a,
+	&__curr{
+		display: block;
+		width: 36px;
+		height: 36px;
+		line-height: 36px;
+		font-size: 21px;
+		color: #000000;
+		text-align: center;
+		text-decoration: none;
+	}
+	&__a{
+		opacity: .3;
+		transition: .5s;
+		&:hover{
+			opacity: .7;
+		}
+	}
+	&__prev,
+	&__next{
+		display: block;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		margin: 0 7px;
+		&_disabled{
+			opacity: .2;
+		}
+	}
+}

@@ -1,0 +1,58 @@
+@import "variables";
+@import "functions";
+@import "extends";
+@import "mixins";
+
+/*main*/
+.main{
+	padding-top: 100px;
+}
+
+/*full-page*/
+.full-page{
+	@extend %fwh;
+	padding-top: 100px;
+	overflow: hidden;
+	&_middle{
+		display: flex;
+		align-items: center;
+		&__inner{
+			width: 100%;
+		}
+	}
+}
+
+/*section*/
+.section{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+/*list*/
+.list{
+	list-style: none;
+	li{
+		line-height: (24/16);
+		padding-left: 30px;
+		margin: em(30) 0;
+		position: relative;
+		&:before{
+			@extend %ab;
+			width: 9px;
+			height: 9px;
+			position: absolute;
+			left: 3px;
+			top: 6px;
+			background: $rd;
+		}
+	}	
+}
+
+
+
+/*image*/
+.fullwidth-img{
+	width: 100%;
+	height: auto;
+}
+
