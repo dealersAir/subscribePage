@@ -59,10 +59,10 @@ if (!empty($_SESSION['csrf-secret'])) {
 			</div>
 		</div>
 		<div class="row row_wrp row_col-middle">
-			<div class="col-6">
-				
+			<div class="col-7">
+				<img src="/images/6steps-package.jpg" alt="6 steps" class="fullwidth-img">
 			</div>
-			<div class="col-6">
+			<div class="col-5">
 				<form action="/subscribe.php" method="POST" class="form">
 					<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
 					<div class="row">

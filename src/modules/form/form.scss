@@ -5,14 +5,6 @@
 @import "form-extends";
 
 .form{
-	.row{
-		padding-left: 8px;
-		padding-right: 8px;
-		& > div[class*="col"]{
-			padding-left: 7px;
-			padding-right: 7px;
-		}
-	}
 	&__text-input,
 	&__textarea{
 		@extend %inp;

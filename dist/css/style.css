@@ -205,7 +205,7 @@ hr {
 
 .row_wrp {
   margin: 0 auto;
-  max-width: 1366px;
+  max-width: 980px;
 }
 
 .row_nw {
@@ -1705,16 +1705,6 @@ hr {
 
 .form__text-input:focus, .form__textarea:focus {
   border-color: #212121;
-}
-
-.form .row {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.form .row > div[class*="col"] {
-  padding-left: 7px;
-  padding-right: 7px;
 }
 
 .form__textarea {
