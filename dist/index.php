@@ -15,6 +15,7 @@ if (!empty($_SESSION['csrf-secret'])) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 	<title>Home page | startTemplate</title>
@@ -25,25 +26,20 @@ if (!empty($_SESSION['csrf-secret'])) {
 <header id="header" class="header">
 	<div class="row row_wrp row_col-middle header__row">
 		<div class="col p-y-0">
-			<a href="index.html" class="header__logo"><img src="images/logo.svg" alt="logo"></a>
+			<div class="header__logo"><img src="images/6steps-logo.png" alt="6 steps logo"></div>
 		</div>
-		<div class="col col_grow p-y-0">
-			<div class="row row_col-middle">
-				<nav class="col">
-					<!--Menu/-->
-					<ul class="menu">
-						<li class="menu__item">
-							<a href="grid.html" class="menu__a">Grid</a>
-						</li>
-					</ul>
-					<!--/Menu-->
-				</nav>
-				<div class="col col-right p-0">
-					
-				</div>
-			</div>
-		</div>
-
+		<nav class="col col_right">
+			<!--Menu/-->
+			<ul class="menu">
+				<li class="menu__item">
+					<a href="#program" class="js-anchor menu__a">Программа курса</a>
+				</li>
+				<li class="menu__item">
+					<a href="#author" class="js-anchor menu__a">О авторе</a>
+				</li>
+			</ul>
+			<!--/Menu-->
+		</nav>
 		<button class="js-close-menu menu-close-btn"></button>
 	</div>
 	<button class="js-open-menu open-menu-btn"><span></span><span></span><span></span><span></span></button>
@@ -55,7 +51,7 @@ if (!empty($_SESSION['csrf-secret'])) {
 	<div class="section">
 		<div class="row row_wrp">
 			<div class="col-12">
-				<h1 class="title"></h1>
+				<h1 class="title"><span class="c-green2">Бесплатный</span> видеокурс<br> <span class="c-red2">«6 шагов оздоровительного похудения»</span></h1>
 			</div>
 		</div>
 		<div class="row row_wrp row_col-middle">
@@ -63,22 +59,126 @@ if (!empty($_SESSION['csrf-secret'])) {
 				<img src="/images/6steps-package.jpg" alt="6 steps" class="fullwidth-img">
 			</div>
 			<div class="col-5">
-				<form action="/subscribe.php" method="POST" class="form">
-					<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-					<div class="row">
-						<div class="col-12">
-							<div class="form__field">
-								<input type="text" name="email" data-type="email" data-required="true" placeholder="Ваш E-mail" class="form__text-input" value="">
-								<div class="field-error-tip" data-error-text-2="Введите корректный e-mail">Введите ваш e-mail</div>
+
+				<div class="subscribe">
+					<div class="subscribe__head">
+						Получите <strong>бесплатно</strong> видеокурс «6 шагов оздоровительного похудения»
+					</div>
+					<form action="/subscribe.php" method="POST" class="form">
+						<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+						<div class="row">
+							<div class="col-12">
+								<div class="form__field">
+									<input type="text" name="name" data-type="name" placeholder="Ваше имя" class="form__text-input" value="">
+									<div class="field-error-tip" data-error-text-2="Введите корректное имя">Введите ваше имя</div>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<button type="submit" class="form__submit btn">Получить курс бесплатно</button>
+						<div class="row">
+							<div class="col-12">
+								<div class="form__field">
+									<input type="text" name="email" data-type="email" data-required="true" placeholder="Ваш E-mail*" class="form__text-input" value="">
+									<div class="field-error-tip" data-error-text-2="Введите корректный e-mail">Введите ваш e-mail</div>
+								</div>
+							</div>
 						</div>
+						<div class="row">
+							<div class="col-12 ta-c">
+								<button type="submit" class="form__submit btn">Получить курс бесплатно</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 ta-c form__txt p-y-0">
+								Нажимая кнопку, вы соглашаетесь<br> с <a href="#privacy-policy" data-popup="#privacy-policy" class="js-open-popup link link_dash">политикой конфиденциальности</a>
+							</div>
+						</div>
+					</form>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<div id="program-anchor" class="section bg-gray0">
+		<div class="row row_wrp">
+			<div class="col-12">
+				<h2 class="title">Программа курса</h2>
+			</div>
+			<div class="col-12 ta-c">
+				<strong>Курс состоит из 6-ти видео уроков</strong>
+			</div>
+			<div class="col-7 col_center">
+				<ol class="list">
+					<li>
+						Снижении тяги к сладкой пище.
+					</li>
+					<li>
+						Главная ошибка при похудании, о которой забывают все!
+					</li>
+					<li>
+						Ускорение обмена веществ.
+					</li>
+					<li>
+						Как не испытывать силу воли при похудении.
+					</li>
+					<li>
+						Уменьшении целлюлита без вреда для здоровья.
+					</li>
+					<li>
+						Как сделать похудение наиболее легким и приятным.
+					</li>
+				</ol>
+			</div>
+		</div>
+		<div class="row row_wrp mt-30">
+			<div class="col-5 col_center">
+				<div class="subscribe">
+					<div class="subscribe__head">
+						Получите <strong>бесплатно</strong> видеокурс «6 шагов оздоровительного похудения»
 					</div>
-				</form>
+					<form action="/subscribe.php" method="POST" class="form">
+						<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+						<div class="row">
+							<div class="col-12">
+								<div class="form__field">
+									<input type="text" name="name" data-type="name" placeholder="Ваше имя" class="form__text-input" value="">
+									<div class="field-error-tip" data-error-text-2="Введите корректное имя">Введите ваше имя</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div class="form__field">
+									<input type="text" name="email" data-type="email" data-required="true" placeholder="Ваш E-mail*" class="form__text-input" value="">
+									<div class="field-error-tip" data-error-text-2="Введите корректный e-mail">Введите ваш e-mail</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 ta-c">
+								<button type="submit" class="form__submit btn">Получить курс бесплатно</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 ta-c form__txt p-y-0">
+								Нажимая кнопку, вы соглашаетесь<br> с <a href="#privacy-policy" data-popup="#privacy-policy" class="js-open-popup link link_dash">политикой конфиденциальности</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="author-anchor" class="section">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="title">О авторе курса</h2>
+			</div>
+		</div>
+		<div class="row row_wrp">
+			<div class="col-7 col_center">
+				
 			</div>
 		</div>
 	</div>
@@ -117,11 +217,34 @@ if (!empty($_SESSION['csrf-secret'])) {
 <!--POPUPs/-->
 <div class="popup">
 
-	<div id="popup-1" class="popup__window" style="max-width: 550px;">
+	<div id="privacy-policy" class="popup__window">
 		<button class="js-popup-close popup-close-btn"></button>
-		<div class="popup__inner" style="height: 100px;">
-			<a href="#message-popup" class="js-open-msg-popup">POPUP с сообщением</a>
-		</div> 
+		<div class="popup__inner">
+			<div class="popup__title">
+				Политика конфиденциальности
+			</div>
+			<p>
+				Соблюдение Вашей конфиденциальности важно для нас. По этой причине, мы разработали Политику Конфиденциальности, которая описывает, как мы используем и храним вашу информацию. Пожалуйста, ознакомьтесь с нашими правилами соблюдения конфиденциальности.
+			</p>
+			<h2>Сбор и использование персональной информации</h2>
+			<p>
+				Когда вы оставляете заявку на сайте, мы можем собирать различную информацию, например ваши имя и адрес электронной почты.
+			</p>
+			<p>
+				Собираемая нами персональная информация позволяет нам связываться с Вами и сообщать об уникальных предложениях, акциях и других мероприятиях и ближайших событиях.
+			</p>
+			<p>
+				Мы можем использовать вашу персональную информацию для отправки Вам важных уведомлений и сообщений.
+			</p>
+			<h2>Раскрытие информации третьим лицам</h2>
+			<p>
+				Мы не раскрываем полученную от Вас информацию третьим лицам.
+			</p>
+			<h2>Защита персональной информации</h2>
+			<p>
+				Мы предпринимаем меры предосторожности — включая административные, технические и физические — для защиты Вашей персональной информации от утраты, кражи, и недобросовестного использования, а также от несанкционированного доступа, раскрытия, изменения и уничтожения.
+			</p>
+		</div>
 	</div>
 
 	<div id="popup-2" class="popup__window" style="max-width: 550px;">
@@ -174,13 +297,8 @@ if (!empty($_SESSION['csrf-secret'])) {
 </div>
 <!--/POPUPs-->
 
-<script src="js/jquery-3.1.1.min.js"></script>
-<!--script src="js/easing.min.js"></script-->
-<script src="js/maskinput.min.js"></script>
-
 <script src="js/script.js"></script>
 <script src="js/common.js"></script>
-<script async src="https://get.dealersair.com/api/geo/?key=lufter21"></script>
 
 </body>
 </html>

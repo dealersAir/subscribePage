@@ -38,7 +38,6 @@
 //default btn
 .btn{
 	@extend %btn;
-	width: 150px;
 }
 
 //arrow btn
@@ -74,8 +73,12 @@
 /*link*/
 .link{
 	text-decoration: none;
-	border-bottom: 2px solid $be;
+	color: $be;
+	border-bottom: 1px solid $be;
 	transition: .5s;
+	&_dash{
+		border-bottom-style: dashed;
+	}
 	&:hover{
 		border-bottom-color: transparent;
 	}

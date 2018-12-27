@@ -4,8 +4,14 @@
 .c-red{
 	color: $rd !important;
 }
+.c-red2{
+	color: $rd2 !important;
+}
 .c-gray{
 	color: $gy !important;
+}
+.c-green2{
+	color: $gn2 !important;
 }
 
 /*text align*/
@@ -20,6 +26,9 @@
 }
 
 /*background*/
+.bg-gray0{
+	background: $gy0;
+}
 .bg-gray{
 	background: $gy;
 }
@@ -46,6 +55,9 @@
 
 /*marging*/
 .mt{
+	&-30{
+		margin-top: 30px !important;
+	}
 	&-0{
 		margin-top: 0 !important;
 	}
