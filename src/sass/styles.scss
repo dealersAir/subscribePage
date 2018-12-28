@@ -57,11 +57,22 @@ ul.list{
 ol.list{
 	counter-reset: listCounter;
 	li{
+		padding-left: 45px;
 		&:before{
 			counter-increment: listCounter;
-			content: counter(listCounter)".";
-			color: $gn2;
+			content: counter(listCounter);
+			width: 22px;
+			height: 22px;
+			font-size: 14px;
+			color: #fff;
 			font-weight: 700;
+			line-height: normal;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-image: linear-gradient(to top left, $gn2, $gn);
+			border: 1px solid $gn2;
+			border-radius: 2px;
 			top: 0;
 			left: 0;
 		}
@@ -88,9 +99,24 @@ ol.list{
 	padding: 15px;
 	border: 2px solid $gn2;
 	border-radius: 6px;
+	background: $gy0;
 	&__head{
 		font-size: 18px;
 		line-height: 1.45;
 		padding: 15px;
+		p{
+			font-size: 13px;
+			color: $gn2;
+			padding-top: 10px;
+		}
+	}
+}
+
+/* article */
+.article{
+	p{
+		line-height: 1.5;
+		margin-top: 30px;
+		@include fch(t);
 	}
 }

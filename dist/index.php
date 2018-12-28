@@ -59,42 +59,7 @@ if (!empty($_SESSION['csrf-secret'])) {
 				<img src="/images/6steps-package.jpg" alt="6 steps" class="fullwidth-img">
 			</div>
 			<div class="col-5">
-
-				<div class="subscribe">
-					<div class="subscribe__head">
-						Получите <strong>бесплатно</strong> видеокурс «6 шагов оздоровительного похудения»
-					</div>
-					<form action="/subscribe.php" method="POST" class="form">
-						<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-						<div class="row">
-							<div class="col-12">
-								<div class="form__field">
-									<input type="text" name="name" data-type="name" placeholder="Ваше имя" class="form__text-input" value="">
-									<div class="field-error-tip" data-error-text-2="Введите корректное имя">Введите ваше имя</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12">
-								<div class="form__field">
-									<input type="text" name="email" data-type="email" data-required="true" placeholder="Ваш E-mail*" class="form__text-input" value="">
-									<div class="field-error-tip" data-error-text-2="Введите корректный e-mail">Введите ваш e-mail</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 ta-c">
-								<button type="submit" class="form__submit btn">Получить курс бесплатно</button>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 ta-c form__txt p-y-0">
-								Нажимая кнопку, вы соглашаетесь<br> с <a href="#privacy-policy" data-popup="#privacy-policy" class="js-open-popup link link_dash">политикой конфиденциальности</a>
-							</div>
-						</div>
-					</form>
-				</div>
-				
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/inc/subscribe-block.php"; ?>
 			</div>
 		</div>
 	</div>
@@ -122,7 +87,7 @@ if (!empty($_SESSION['csrf-secret'])) {
 						Как не испытывать силу воли при похудении.
 					</li>
 					<li>
-						Уменьшении целлюлита без вреда для здоровья.
+						Уменьшение целлюлита без вреда для здоровья.
 					</li>
 					<li>
 						Как сделать похудение наиболее легким и приятным.
@@ -132,40 +97,7 @@ if (!empty($_SESSION['csrf-secret'])) {
 		</div>
 		<div class="row row_wrp mt-30">
 			<div class="col-5 col_center">
-				<div class="subscribe">
-					<div class="subscribe__head">
-						Получите <strong>бесплатно</strong> видеокурс «6 шагов оздоровительного похудения»
-					</div>
-					<form action="/subscribe.php" method="POST" class="form">
-						<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-						<div class="row">
-							<div class="col-12">
-								<div class="form__field">
-									<input type="text" name="name" data-type="name" placeholder="Ваше имя" class="form__text-input" value="">
-									<div class="field-error-tip" data-error-text-2="Введите корректное имя">Введите ваше имя</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12">
-								<div class="form__field">
-									<input type="text" name="email" data-type="email" data-required="true" placeholder="Ваш E-mail*" class="form__text-input" value="">
-									<div class="field-error-tip" data-error-text-2="Введите корректный e-mail">Введите ваш e-mail</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 ta-c">
-								<button type="submit" class="form__submit btn">Получить курс бесплатно</button>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12 ta-c form__txt p-y-0">
-								Нажимая кнопку, вы соглашаетесь<br> с <a href="#privacy-policy" data-popup="#privacy-policy" class="js-open-popup link link_dash">политикой конфиденциальности</a>
-							</div>
-						</div>
-					</form>
-				</div>
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/inc/subscribe-block.php"; ?>
 			</div>
 		</div>
 	</div>
@@ -177,42 +109,31 @@ if (!empty($_SESSION['csrf-secret'])) {
 			</div>
 		</div>
 		<div class="row row_wrp">
-			<div class="col-7 col_center">
-				
+			<div class="col-10 col_center">
+				<div class="article">
+					<p>
+						<strong>Галина Николаевна Гроссманн</strong> училась на биолога в Красноярском университете, позже защитила диссертацию. Научную карьеру начала в Институте Физики Академии Наук СССР. Принимала участие в космических программах в Институте Экспериментальной Биологии АН СССР.
+					</p>
+					<p>
+						С 1996 года возглавляет Центр биологии и экологии человека в Эстонии, где продолжает свою исследовательскую и практическую деятельность. Она регулярно проводит сеансы по омоложению организма и сбросу лишнего веса.
+					</p>
+					<p>
+						Помогла множеству людей победить недуг переедания и болезненной избыточности веса. Записала большое число видео курсов, регулярно проводит тренинги, мастер-классы и вебинары, даёт консультации.
+					</p>
+					<p>
+						Сеансы омоложения Галины Николаевны и методика снятия возрастного комплекса помогают уменьшить влияние отрицательных факторов, продлить жизнь человека, замедлить процессы старения.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row row_wrp mt-30">
+			<div class="col-5 col_center">
+				<?php include $_SERVER['DOCUMENT_ROOT'] . "/inc/subscribe-block.php"; ?>
 			</div>
 		</div>
 	</div>
 </main>
 <!--/MAIN-->
-
-<!--FOOTER/-->
-<footer class="footer">
-	<div class="row row_wrp">
-		<div class="col-3">
-			<div class="footer__logo">
-				<a href="#"><img src="images/logo.svg" alt="logo"></a>
-			</div>
-		</div>
-		<div class="col-8">
-			<ul class="foot-nav">
-				<li class="foot-nav__item"><a href="#" class="foot-nav__a">Item 1</a></li>
-				<li class="foot-nav__item"><a href="#" class="foot-nav__a">Item 2</a></li>
-				<li class="foot-nav__item"><a href="#" class="foot-nav__a">Item 3</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="row row_wrp">
-		<div class="col-12">
-			<div class="footer__txt">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.
-			</div>
-		</div>
-	</div>
-</footer>
-<!--/FOOTER-->
 
 <!--POPUPs/-->
 <div class="popup">
@@ -244,13 +165,6 @@ if (!empty($_SESSION['csrf-secret'])) {
 			<p>
 				Мы предпринимаем меры предосторожности — включая административные, технические и физические — для защиты Вашей персональной информации от утраты, кражи, и недобросовестного использования, а также от несанкционированного доступа, раскрытия, изменения и уничтожения.
 			</p>
-		</div>
-	</div>
-
-	<div id="popup-2" class="popup__window" style="max-width: 550px;">
-		<button class="js-popup-close popup-close-btn"></button>
-		<div class="popup__inner" style="height: 1300px;">
-			
 		</div>
 	</div>
 

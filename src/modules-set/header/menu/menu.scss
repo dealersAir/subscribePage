@@ -9,7 +9,7 @@
 	list-style: none;
 	&__item{
 		float: left;
-		margin-left: 45px;
+		margin-left: 75px;
 		@include fch(l);
 		&_has-children{
 			position: relative;

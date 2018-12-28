@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 	
 	// anchor
-	Anchor.init('.js-anchor', 700, 100);
+	Anchor.init('.js-anchor', 700, 80);
 	
 	// submit form
 	Form.init('.form');
