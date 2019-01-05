@@ -3,14 +3,19 @@ require_once $_SERVER['DOCUMENT_ROOT'] ."/SendMailSmtpClass.php";
 
 $mailSMTP = new SendMailSmtpClass(SMTP_EMAIL, SMTP_PASSWORD, 'ssl://smtp.yandex.ru', 465, "UTF-8");
 
+$subject = 'Бесплатный видеокурс «6 шагов оздоровительного похудения»';
+
+$utext = 'Приветствуем '. ((!empty($name)) ? $name : 'Вас') .'! Курс доступен по ссылке:<br>';
+$utext .= '<b><a href="https://shop.hudeem99.ru/aff/free/400101839/lufter/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=email">Получить бесплатный видеокурс «6 шагов оздоровительного похудения»</a></b>';
+
 $from = array(
-    "Ecologic Room 2",
-    "test@ecologic-room.com"
+    "Info.dealersAir",
+    "info@dealersair.com"
 );
 
-$to = (!empty($email)) ? $email . ',dealersair@gmail.com' : 'dealersair@gmail.com';
+$to = (!empty($email)) ? $email .',dealersair@gmail.com' : 'dealersair@gmail.com';
 
-$result = $mailSMTP->send($to, 'Тема письма', 'Текст письма', $from);
+$result = $mailSMTP->send($to, $subject, $utext, $from);
 
 if ($result === true) {
     echo 'sent';

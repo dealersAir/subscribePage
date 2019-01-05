@@ -26,6 +26,9 @@
 		display: block;
 		width: 100%;
 	}
+	@media(max-width: 750px){
+		width: 100%;
+	}
 }
 
 %btn-icon{
@@ -44,7 +47,7 @@
 .arrow-btn{
 	@extend %btn;
 	padding-right: 43px;
-
+	
 	&:after{
 		@extend %btn-icon;
 		width: 15px;

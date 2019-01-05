@@ -38,6 +38,7 @@ var modulesOn = [
 	// 'tab',
 	// 'bubble',
 	'anchor',
+	'alert',
 	// 'diagram',
 	// 'numberspin',
 	// 'share',

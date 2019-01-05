@@ -6,6 +6,9 @@
 /*main*/
 .main{
 	padding-top: 80px;
+	@media(max-width: 1000px){
+		padding-top: 65px;
+	}
 }
 
 /*full-page*/
@@ -26,6 +29,10 @@
 .section{
 	padding-top: 30px;
 	padding-bottom: 30px;
+	@media(max-width: 750px){
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
 }
 
 /*list*/
@@ -77,6 +84,14 @@ ol.list{
 			left: 0;
 		}
 	}
+	@media(max-width: 750px){
+		font-size: 14px;
+		li{
+			&::before{
+				top: -2px;
+			}
+		}
+	}
 }
 
 /*image*/
@@ -92,6 +107,10 @@ ol.list{
 	line-height: 1.3;
 	text-align: center;
 	margin-bottom: 35px;
+	@media(max-width: 750px){
+		font-size: 28px;
+		margin-bottom: 15px;
+	}
 }
 
 /* subscribe block */
@@ -110,6 +129,9 @@ ol.list{
 			padding-top: 10px;
 		}
 	}
+	@media(max-width: 750px){
+		padding: 10px 0 20px;
+	}
 }
 
 /* article */
@@ -118,5 +140,11 @@ ol.list{
 		line-height: 1.5;
 		margin-top: 30px;
 		@include fch(t);
+	}
+	@media(max-width: 750px){
+		font-size: 14px;
+		p{
+			margin-top: 20px;
+		}
 	}
 }

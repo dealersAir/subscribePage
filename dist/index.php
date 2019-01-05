@@ -9,16 +9,15 @@ if (!empty($_SESSION['csrf-secret'])) {
 	$_SESSION['csrf-secret'] = sha1(mt_rand());
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-	<title>Home page | startTemplate</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+	<title>Бесплатный видеокурс «6 шагов оздоровительного похудения»</title>
 </head>
 <body>
 

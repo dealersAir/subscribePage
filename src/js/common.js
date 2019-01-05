@@ -1,23 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-	(function initFun() {
-		if (window.innerWidth < 1200) {
-			var fsElem = document.querySelector('.first-screen');
-			
-			if (fsElem) {
-				fsElem.style.height = window.innerHeight +'px';
-			}
-		}
-		
-		window.addEventListener('winResized', initFun);
-	})();
-	
-	// init toggle button
-	Toggle.init('.js-toggle', '.js-document-toggle-off');
-	
-	Toggle.onChange = function(tgl, state) {
-		
-	}
-	
 	// popup init
 	Popup.init('.js-open-popup');
 	MediaPopup.init('.js-open-media-popup');
@@ -37,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	// anchor
 	Anchor.init('.js-anchor', 700, 80);
+
+	// alert
+	new Alert({
+		content: 'На нашем веб-сайте используются файлы cookies, которые позволяют улучшить Ваше взаимодействие с сайтом.<br> Когда вы посещаете данный веб-сайт, Вы даете согласие на использование файлов cookies.',
+		showOnce: true
+	});
 	
 	// submit form
 	Form.init('.form');

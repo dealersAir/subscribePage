@@ -103,6 +103,19 @@
 			}
 		}
 	}
+	&__inner{
+		padding: 50px 30px;
+		h2{
+			font-size: 15px;
+			line-height: 1.2;
+		}
+		p{
+			font-size: 14px;
+		}
+	}
+	&__title{
+		font-size: 20px;
+	}
 }
 
 /*popup-message*/
