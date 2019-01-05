@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 	// popup init
 	Popup.init('.js-open-popup');
-	MediaPopup.init('.js-open-media-popup');
 	
 	// menu
 	if (window.innerWidth < 1000) {
@@ -34,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			send: new FormData(form),
 			success: function(response) {
 				if (response == 'sent') {
-					Popup.message('#message-popup', 'Форма отправлена');
+					Popup.message('#message-popup', 'Мы отправили письмо с ссылкой на курс на указанный вами e-mail.<br> Иногда, письмо может попадать в папку "спам".');
 					
 					callback({clearForm: true, unlockSubmitButton: true});
 				} else {
