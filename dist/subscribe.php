@@ -11,15 +11,15 @@ if (empty($email)) {
 	exit('Enter e-mail');
 }
 
-$salt = "dfgrt";
-$csrf_token = $salt.':'.md5($salt .':'. $_SESSION['csrf-secret']);
+$salt = 'dfgrt';
+$csrf_token = $salt.':'.md5($salt .':'. $_SESSION['csrf-secret']) .':'. $salt;
 
 if ($_POST['csrf_token'] != $csrf_token) {
 	exit;
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'] ."/config.php";
-require_once $_SERVER['DOCUMENT_ROOT'] ."/DbConnect.php";
+require_once $_SERVER['DOCUMENT_ROOT'] .'/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] .'/DbConnect.php';
 
 $db = DbConnect::getInstance();
 $db = $db->getDb();
@@ -34,5 +34,5 @@ $add_subscriber->execute(array(
 	'u_interest' => 'losing weight'
 ));
 
-require_once $_SERVER['DOCUMENT_ROOT'] ."/mailer.php";
+require_once $_SERVER['DOCUMENT_ROOT'] .'/mailer.php';
 ?>

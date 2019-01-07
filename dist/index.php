@@ -1,13 +1,19 @@
 <?php
 session_start();
 
-$csrf_token = '';
+$csrf_secret = '';
+
 if (!empty($_SESSION['csrf-secret'])) {
-	$salt = "dfgrt";
-	$csrf_token = $salt.':'.md5($salt.':'.$_SESSION['csrf-secret']);
+	$csrf_secret = $_SESSION['csrf-secret'];
 } else {
-	$_SESSION['csrf-secret'] = sha1(mt_rand());
+	$csrf_secret = $_SESSION['csrf-secret'] = sha1(mt_rand());
 }
+
+$csrf_token = '';
+$salt = "dfgrt";
+$csrf_token = $salt .':'. md5($salt .':'. $csrf_secret) .':'. $salt;
+
+setcookie('d_air_interest', 'losing_weight', time() + 31104000, '/', 'dealersair.com');
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -16,7 +22,6 @@ if (!empty($_SESSION['csrf-secret'])) {
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 	<title>Бесплатный видеокурс «6 шагов оздоровительного похудения»</title>
 </head>
 <body>
@@ -58,7 +63,7 @@ if (!empty($_SESSION['csrf-secret'])) {
 				<img src="/images/6steps-package.jpg" alt="6 steps" class="fullwidth-img">
 			</div>
 			<div class="col-5">
-				<?php include $_SERVER['DOCUMENT_ROOT'] . "/inc/subscribe-block.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/subscribe-block.php'; ?>
 			</div>
 		</div>
 	</div>
@@ -96,7 +101,7 @@ if (!empty($_SESSION['csrf-secret'])) {
 		</div>
 		<div class="row row_wrp mt-30">
 			<div class="col-5 col_center">
-				<?php include $_SERVER['DOCUMENT_ROOT'] . "/inc/subscribe-block.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/subscribe-block.php'; ?>
 			</div>
 		</div>
 	</div>
@@ -127,7 +132,7 @@ if (!empty($_SESSION['csrf-secret'])) {
 		</div>
 		<div class="row row_wrp mt-30">
 			<div class="col-5 col_center">
-				<?php include $_SERVER['DOCUMENT_ROOT'] . "/inc/subscribe-block.php"; ?>
+				<?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/subscribe-block.php'; ?>
 			</div>
 		</div>
 	</div>
@@ -166,37 +171,6 @@ if (!empty($_SESSION['csrf-secret'])) {
 			</p>
 		</div>
 	</div>
-
-	<!--Media Popup/-->
-	<div id="media-popup" class="popup-media popup__window">
-		<button class="js-popup-close popup-close-btn"></button>
-		<div class="popup__inner">
-
-			<div class="popup-media__box middle">
-
-				<img src="#" class="popup-media__image middle__img" alt="photo">
-
-				<div class="popup-media__video">
-					<a href="#" class="popup-media__play"></a>
-					<iframe src="" class="popup-media__iframe" allowfullscreen></iframe>
-				</div>
-				
-				<button class="popup-media__arr popup-media__arr_l" data-dir="prev"></button>
-				<button class="popup-media__arr popup-media__arr_r" data-dir="next"></button>
-				
-			</div>
-			
-			<div class="popup-media__bar row-col-mid">
-				<div class="popup-media__bar-date popup-media__data-0 col vw1000-col-12">
-					<!--data string 1-->
-				</div>
-				<div class="popup-media__bar-tit popup-media__data-1 col vw1000-col-12">
-					<!--data string 2-->
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--/Media Popup-->
 
 	<!--Message Popup/-->
 	<div id="message-popup" class="popup-message popup__window">

@@ -3,7 +3,7 @@ var Popup;
 (function() {
 	"use strict";
 
-	//popup core
+	// popup core
 	Popup = {
 		winScrollTop: 0,
 		onClose: null,
