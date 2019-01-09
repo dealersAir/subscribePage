@@ -35,7 +35,7 @@ $mail -> Port = 465;
 //Recipients
 $mail -> setFrom('free@info.dealersair.com', 'iNFO.dealersAir');
 $mail -> addAddress($rec_email, $rec_name);
-$mail -> addReplyTo('free@info.dealersair.com', 'Free Course');
+$mail -> addReplyTo('free@info.dealersair.com', 'iNFO.dealersAir');
 
 //Content
 $mail -> isHTML(true);
