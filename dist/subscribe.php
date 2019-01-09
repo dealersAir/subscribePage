@@ -5,9 +5,9 @@ if (empty($_SESSION['csrf-secret'])) {
 	exit;
 }
 
-$email = $_POST['email'];
+$rec_email = $_POST['email'];
 
-if (empty($email)) {
+if (empty($rec_email)) {
 	exit('Enter e-mail');
 }
 
@@ -25,11 +25,11 @@ $db = DbConnect::getInstance();
 $db = $db->getDb();
 $add_subscriber = $db->prepare('INSERT INTO info_subscribers (email,name,interest) VALUES (:email,:name,:interest) ON DUPLICATE KEY UPDATE interest=:u_interest');
 
-$name = $_POST['name'];
+$rec_name = $_POST['name'];
 
 $add_subscriber->execute(array(
-	'email' => $email,
-	'name' => $name,
+	'email' => $rec_email,
+	'name' => $rec_name,
 	'interest' => 'losing weight',
 	'u_interest' => 'losing weight'
 ));

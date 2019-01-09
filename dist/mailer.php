@@ -1,26 +1,51 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] ."/SendMailSmtpClass.php";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-$mailSMTP = new SendMailSmtpClass(SMTP_EMAIL, SMTP_PASSWORD, 'ssl://smtp.yandex.ru', 465, "UTF-8");
+require $_SERVER['DOCUMENT_ROOT'] .'/PHPMailer/Exception.php';
+require $_SERVER['DOCUMENT_ROOT'] .'/PHPMailer/PHPMailer.php';
+require $_SERVER['DOCUMENT_ROOT'] .'/PHPMailer/SMTP.php';
 
 $subject = 'Бесплатный видеокурс «6 шагов оздоровительного похудения»';
 
-$utext = '<!doctype html><html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Бесплатный видеокурс «6 шагов оздоровительного похудения»</title></head><body style="margin: 0; padding: 0;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td style="padding-top: 20px; padding-left: 20px; padding-right: 20px; padding-bottom: 20px; background-color: #f1f1f1;"><img src="https://info.dealersair.com/info-dealersair.png" alt="iNFO.dealersAir"></td></tr><tr><td style="padding-top: 20px; padding-left: 20px; padding-right: 20px; padding-bottom: 20px; font-size: 18px; line-height: 1.5;">Приветствуем '. ((!empty($name)) ? $name : 'Вас') .'!<br> Курс доступен по ссылке:<br> ';
-$utext .= '<b><a href="https://shop.hudeem99.ru/aff/free/400101839/lufter/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=email&aff_campaign=6steps">Получить бесплатный видеокурс «6 шагов оздоровительного похудения»</a></b>';
-$utext .= '</td></tr><tr><td style="padding-top: 20px; padding-left: 20px; padding-right: 20px; padding-bottom: 20px; font-size: 14px; line-height: 1.5; background-color: #f1f1f1;">';
-$utext .= 'Если у вас возникли вопросы, просто нажмите кнопку <b>Ответить</b>, не меняйте тему письма.';
-$utext .= '</td></tr></table></body></html>';
+$utext = 'Здравствуйте'. ((!empty($rec_name)) ? ', '. $rec_name : '') .'!<br> 
+Курс доступен по ссылке: <b><a href="https://shop.hudeem99.ru/aff/free/400101839/lufter/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=email&aff_campaign=6steps" target="_blank">Получить бесплатный видеокурс «6 шагов оздоровительного похудения»</a></b><br><br> 
+Если у вас возникли вопросы, просто нажмите кнопку <b>Ответить</b>, не меняйте тему письма.<br><br> 
+<img src="https://info.dealersair.com/info-dealersair.png" alt="iNFO.dealersAir">';
 
-$from = array(
-	"iNFO.dealersAir",
-	"dealersair@yandex.ru"
-);
+$plain_text = 'Здравствуйте'. ((!empty($rec_name)) ? ', '. $rec_name : '') .'!  
+Курс доступен по ссылке: **[Получить бесплатный видеокурс «6 шагов оздоровительного похудения»](https://shop.hudeem99.ru/aff/free/400101839/lufter/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=email&aff_campaign=6steps)**  
 
-$result = $mailSMTP->send($email, $subject, $utext, $from);
+Если у вас возникли вопросы, просто нажмите кнопку **Ответить**, не меняйте тему письма.  
 
-if ($result === true) {
+![iNFO.dealersAir](https://info.dealersair.com/info-dealersair.png)';
+
+$mail = new PHPMailer();
+$mail -> CharSet = 'UTF-8';
+
+// Server   
+$mail -> isSMTP();                                      
+$mail -> Host = 'info.dealersair.com';
+$mail -> SMTPAuth = true;
+$mail -> Username = SMTP_EMAIL;
+$mail -> Password = SMTP_PASSWORD;
+$mail -> SMTPSecure = 'ssl';
+$mail -> Port = 465;
+
+//Recipients
+$mail -> setFrom('free@info.dealersair.com', 'iNFO.dealersAir');
+$mail -> addAddress($rec_email, $rec_name);
+$mail -> addReplyTo('free@info.dealersair.com', 'Free Course');
+
+//Content
+$mail -> isHTML(true);
+$mail -> Subject = $subject;
+$mail -> Body = $utext;
+$mail -> AltBody = $plain_text;
+
+if ($mail -> send()) {
 	echo 'sent';
 } else {
-	echo 'Error: '. $result;
+	echo 'Message could not be sent. Mailer Error: ', $mail -> ErrorInfo;
 }
 ?>
