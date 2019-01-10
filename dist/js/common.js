@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			send: new FormData(form),
 			success: function success(response) {
 				if (response == 'sent') {
-					Popup.message('#message-popup', 'Мы отправили письмо со ссылкой на курс на указанный вами e-mail. Иногда, письмо может попадать в папку <b>спам</b>.');
+					Popup.message('#message-popup', 'Мы отправили письмо со ссылкой на курс на указанный вами e-mail.<br> <span class="c-red">Иногда, письмо может попадать в папку <b>спам</b>.</span>');
 
 					callback({ clearForm: true, unlockSubmitButton: true });
 				} else {
