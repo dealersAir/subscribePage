@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
 				if (response == 'sent') {
 					Popup.message('#message-popup', 'Мы отправили письмо со ссылкой на курс на указанный вами e-mail.<br> <span class="c-red">Иногда, письмо может попадать в папку <b>спам</b>.</span>');
 
+					ym(51865784, 'reachGoal', 'sent_email');
+
 					callback({ clearForm: true, unlockSubmitButton: true });
 				} else {
 					console.log(response);
