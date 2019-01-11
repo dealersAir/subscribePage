@@ -39,11 +39,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
 					callback({ clearForm: true, unlockSubmitButton: true });
 				} else {
-					console.log(response);
+					var inpElem = form.querySelector('input[name="name"]'),
+					    sbscNameElem = document.getElementById('subscriber-name');
+
+					if (inpElem.value.length) {
+						sbscNameElem.innerHTML = ', ' + inpElem.value;
+					}
+
+					Popup.open('#email-alternative');
+
+					ym(51865784, 'reachGoal', 'show_popup');
+
+					callback({ clearForm: false, unlockSubmitButton: true });
 				}
 			},
 			error: function error(response) {
-				console.log(response);
+				var inpElem = form.querySelector('input[type="name"]'),
+				    sbscNameElem = document.getElementById('subscriber-name');
+
+				if (inpElem.value.length) {
+					sbscNameElem.innerHTML = ', ' + inpElem.value;
+				}
+
+				Popup.open('#email-alternative');
+
+				ym(51865784, 'reachGoal', 'show_popup');
+
+				callback({ clearForm: false, unlockSubmitButton: true });
 			}
 		});
 

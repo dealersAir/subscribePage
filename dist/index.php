@@ -172,6 +172,27 @@ setcookie('d_air_interest', 'losing_weight', time() + 31104000, '/', 'dealersair
 		</div>
 	</div>
 
+	<div id="email-alternative" class="popup__window">
+		<button class="js-popup-close popup-close-btn"></button>
+		<div class="popup__inner">
+			<div class="popup__title">
+				Здравствуйте<span id="subscriber-name"></span>!
+			</div>
+			<p>
+				Почтовый сервер перегружен и не может отправить вам письмо.
+			</p>
+			<p>
+				Мы не хотим оставлять вас без этого замечательного курса и предоставляем ссылку, для доступа к курсу, тут же:
+			</p>
+			<p>
+				<b><a href="https://shop.hudeem99.ru/aff/free/400101839/lufter/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=6steps" target="_blank" class="link">Получить бесплатный видеокурс «6 шагов оздоровительного похудения»</a></b>
+			</p>
+			<p>
+				Желаем успехов!
+			</p>
+		</div>
+	</div>
+
 	<!--Message Popup/-->
 	<div id="message-popup" class="popup-message popup__window">
 		<button class="js-popup-close popup-close-btn"></button>

@@ -23,6 +23,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] .'/DbConnect.php';
 
 $db = DbConnect::getInstance();
 $db = $db->getDb();
+
 $add_subscriber = $db->prepare('INSERT INTO info_subscribers (email,name,interest) VALUES (:email,:name,:interest) ON DUPLICATE KEY UPDATE interest=:u_interest, subscribe=:u_subscribe');
 
 $rec_name = trim(htmlspecialchars(strip_tags($_POST['name'])));
