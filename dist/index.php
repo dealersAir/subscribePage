@@ -74,27 +74,27 @@ setcookie('d_air_interest', 'losing_weight', time() + 31104000, '/', 'dealersair
 				<h2 class="title">Программа курса</h2>
 			</div>
 			<div class="col-12 ta-c">
-				<strong>Курс состоит из 6-ти видео уроков</strong>
+				<strong>Курс рассчитан на 6 дней и состоит из 6-ти видео уроков</strong>
 			</div>
 			<div class="col-7 col_center">
 				<ol class="list">
 					<li>
-						Снижении тяги к сладкой пище.
+						Энергетический сеанс “Освобождение от сладкомании”
 					</li>
 					<li>
-						Главная ошибка при похудании, о которой забывают все!
+						Как сделать так, чтобы Ваш организм худел “сам”?
 					</li>
 					<li>
-						Ускорение обмена веществ.
+						Избавление от  пищевой зависимости
 					</li>
 					<li>
-						Как не испытывать силу воли при похудении.
+						Оздоровительное похудание проходит без особых усилий
 					</li>
 					<li>
-						Уменьшение целлюлита без вреда для здоровья.
+						Упражнение от целлюлита
 					</li>
 					<li>
-						Как сделать похудение наиболее легким и приятным.
+						О том, как худеть радостно
 					</li>
 				</ol>
 			</div>
@@ -172,6 +172,27 @@ setcookie('d_air_interest', 'losing_weight', time() + 31104000, '/', 'dealersair
 		</div>
 	</div>
 
+	<div id="email-alternative" class="popup__window">
+		<button class="js-popup-close popup-close-btn"></button>
+		<div class="popup__inner">
+			<div class="popup__title">
+				Здравствуйте<span id="subscriber-name"></span>!
+			</div>
+			<p>
+				Почтовый сервер перегружен и не может отправить вам письмо.
+			</p>
+			<p>
+				Мы не хотим оставлять вас без этого замечательного курса и предоставляем ссылку, для доступа к курсу, тут же:
+			</p>
+			<p>
+				<b><a href="https://shop.hudeem99.ru/aff/free/400101839/lufter/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=6steps" target="_blank" class="link">Получить бесплатный видеокурс «6 шагов оздоровительного похудения»</a></b>
+			</p>
+			<p>
+				Желаем успехов!
+			</p>
+		</div>
+	</div>
+
 	<!--Message Popup/-->
 	<div id="message-popup" class="popup-message popup__window">
 		<button class="js-popup-close popup-close-btn"></button>
@@ -183,6 +204,22 @@ setcookie('d_air_interest', 'losing_weight', time() + 31104000, '/', 'dealersair
 
 </div>
 <!--/POPUPs-->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym");
+
+   ym(51865784, "init", {
+        id:51865784,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/51865784" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 
 <script src="js/script.js"></script>
 <script src="js/common.js"></script>

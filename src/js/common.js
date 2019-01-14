@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 	// anchor
 	Anchor.init('.js-anchor', 700, 80);
-
+	
 	// alert
 	new Alert({
 		content: 'На нашем веб-сайте используются файлы cookies, которые позволяют улучшить Ваше взаимодействие с сайтом.<br> Когда вы посещаете данный веб-сайт, Вы даете согласие на использование файлов cookies.',
@@ -33,15 +33,39 @@ document.addEventListener('DOMContentLoaded', function() {
 			send: new FormData(form),
 			success: function(response) {
 				if (response == 'sent') {
-					Popup.message('#message-popup', 'Мы отправили письмо со ссылкой на курс на указанный вами e-mail. Иногда, письмо может попадать в папку "спам".');
+					Popup.message('#message-popup', 'Мы отправили письмо со ссылкой на курс на указанный вами e-mail.<br> <span class="c-red">Иногда, письмо может попадать в папку <b>спам</b>.</span>');
+					
+					ym(51865784, 'reachGoal', 'sent_email');
 					
 					callback({clearForm: true, unlockSubmitButton: true});
 				} else {
-					console.log(response);
+					var inpElem = form.querySelector('input[name="name"]'),
+					sbscNameElem = document.getElementById('subscriber-name');
+					
+					if (inpElem.value.length) {
+						sbscNameElem.innerHTML = ', '+ inpElem.value;
+					}
+					
+					Popup.open('#email-alternative');
+
+					ym(51865784, 'reachGoal', 'show_popup');
+
+					callback({clearForm: false, unlockSubmitButton: true});
 				}
 			},
 			error: function(response) {
-				console.log(response);
+				var inpElem = form.querySelector('input[type="name"]'),
+				sbscNameElem = document.getElementById('subscriber-name');
+				
+				if (inpElem.value.length) {
+					sbscNameElem.innerHTML = ', '+ inpElem.value;
+				}
+				
+				Popup.open('#email-alternative');
+
+				ym(51865784, 'reachGoal', 'show_popup');
+
+				callback({clearForm: false, unlockSubmitButton: true});
 			}
 		});
 		
