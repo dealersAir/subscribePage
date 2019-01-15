@@ -13,7 +13,7 @@ $csrf_token = '';
 $salt = "dfgrt";
 $csrf_token = $salt .':'. md5($salt .':'. $csrf_secret) .':'. $salt;
 
-setcookie('d_air_interest', 'internet_earnings', time() + 31104000, '/', 'dealersair.com');
+setcookie('d_air_interest', 'losing_weight', time() + 31104000, '/', 'dealersair.com');
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -22,7 +22,7 @@ setcookie('d_air_interest', 'internet_earnings', time() + 31104000, '/', 'dealer
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="/css/style.css">
-	<title>100 процентная, рабочая схема, заработка в интернете</title>
+	<title>Бесплатный видеокурс «6 шагов оздоровительного похудения»</title>
 </head>
 <body>
 
@@ -55,20 +55,12 @@ setcookie('d_air_interest', 'internet_earnings', time() + 31104000, '/', 'dealer
 	<div class="section">
 		<div class="row row_wrp">
 			<div class="col-12">
-				<h1 class="title">100% рабочая схема заработка в интернете<br> от 1000$ и выше, даже с нуля</h1>
+				<h1 class="title"><span class="c-green2">Бесплатный</span> видеокурс<br> <span class="c-red2">«6 шагов оздоровительного похудения»</span></h1>
 			</div>
 		</div>
 		<div class="row row_wrp row_col-middle">
 			<div class="col-7">
-				<!--VIDEO/-->
-				<div class="video">
-					<div class="video__preview cover-img-wrap">
-						<img src="/images/6steps-package.jpg" class="cover-img" alt="thumbnail">
-					</div>
-					<button type="button" data-src="https://www.youtube.com/embed/AfXWkRV0_WI" class="video__btn-play"></button>
-					<div class="video__frame"></div>
-				</div>
-				<!--/VIDEO-->
+				<img src="/images/6steps-package.jpg" alt="6 steps" class="fullwidth-img">
 			</div>
 			<div class="col-5">
 				<?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/subscribe-block.php'; ?>
@@ -212,6 +204,22 @@ setcookie('d_air_interest', 'internet_earnings', time() + 31104000, '/', 'dealer
 
 </div>
 <!--/POPUPs-->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym");
+
+   ym(51865784, "init", {
+        id:51865784,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/51865784" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 
 <script src="js/script.js"></script>
 <script src="js/common.js"></script>

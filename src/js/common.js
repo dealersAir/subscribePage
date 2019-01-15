@@ -1,5 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-	// popup init
+	(function initFun() {
+		CoverImg.reInit('body');
+		
+		window.addEventListener('winResized', initFun);
+	})();
+
+	// cover images
+	CoverImg.init();
+
+	// popup
 	Popup.init('.js-open-popup');
 	
 	// menu
@@ -23,6 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		content: 'На нашем веб-сайте используются файлы cookies, которые позволяют улучшить Ваше взаимодействие с сайтом.<br> Когда вы посещаете данный веб-сайт, Вы даете согласие на использование файлов cookies.',
 		showOnce: true
 	});
+
+	// video
+	Video.init('.video__btn-play');
 	
 	// submit form
 	Form.init('.form');
