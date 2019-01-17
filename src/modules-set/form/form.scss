@@ -5,6 +5,14 @@
 @import "form-extends";
 
 .form{
+	.row{
+		padding-left: 8px;
+		padding-right: 8px;
+		& > div[class*="col"]{
+			padding-left: 7px;
+			padding-right: 7px;
+		}
+	}
 	&__text-input,
 	&__textarea{
 		@extend %inp;
@@ -63,12 +71,7 @@
 		}
 	}
 	&__submit{
-		background: $rd2;
-		color: #fff;
-		border-radius: 6px;
-		&:hover{
-			background: $rd;
-		}
+		background: $rd;
 	}
 	&__loader{
 		height: 3px;
@@ -76,10 +79,6 @@
 		margin: 30px 0;
 		overflow: hidden;
 		display: none;
-	}
-	&__txt{
-		font-size: 11px;
-		line-height: 1.3;
 	}
 	&_sending{
 		.form{
