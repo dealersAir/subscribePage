@@ -21,7 +21,7 @@ setcookie('d_air_interest', 'internet_earnings', time() + 31104000, '/', 'dealer
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="/css/style.css">
-	<title>100 процентная, рабочая схема, заработка в интернете</title>
+	<title>100 процентная, рабочая схема заработка в интернете. Абсолютно бесплатно!</title>
 </head>
 <body>
 
@@ -31,7 +31,7 @@ setcookie('d_air_interest', 'internet_earnings', time() + 31104000, '/', 'dealer
 		<div class="full-page_middle__inner">
 			<div class="row">
 				<div class="col-12">
-					<h1 class="title">100% рабочая схема заработка в интернете<br> от 1000$ и выше, даже без вложений</h1>
+					<h1 class="title">Абсолютно бесплатно!<br> 100% рабочая схема заработка в интернете<br> от 1000$ и выше, даже без вложений</h1>
 				</div>
 				<div class="col-12">
 					<?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/subscribe-block.php'; ?>
