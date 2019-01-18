@@ -9,9 +9,8 @@ if (!empty($_SESSION['csrf-secret'])) {
 	$csrf_secret = $_SESSION['csrf-secret'] = sha1(mt_rand());
 }
 
-$csrf_token = '';
 $salt = "dfgrt";
-$csrf_token = $salt .':'. md5($salt .':'. $csrf_secret) .':'. $salt;
+$csrf_token = $salt . md5($salt . $csrf_secret) . $salt;
 
 setcookie('d_air_interest', 'internet_earnings', time() + 31104000, '/', 'dealersair.com');
 ?>
@@ -26,121 +25,17 @@ setcookie('d_air_interest', 'internet_earnings', time() + 31104000, '/', 'dealer
 </head>
 <body>
 
-<!--HEADER/-->
-<header id="header" class="header">
-	<div class="row row_wrp row_col-middle header__row">
-		<div class="col p-y-0">
-			<div class="header__logo"><img src="images/6steps-logo.png" alt="6 steps logo"></div>
-		</div>
-		<nav class="col col_right">
-			<!--Menu/-->
-			<ul class="menu">
-				<li class="menu__item">
-					<a href="#program" class="js-anchor menu__a">Программа курса</a>
-				</li>
-				<li class="menu__item">
-					<a href="#author" class="js-anchor menu__a">О авторе</a>
-				</li>
-			</ul>
-			<!--/Menu-->
-		</nav>
-		<button class="js-close-menu menu-close-btn"></button>
-	</div>
-	<button class="js-open-menu open-menu-btn"><span></span><span></span><span></span><span></span></button>
-</header>
-<!--/HEADER-->
-
 <!--MAIN/-->
 <main class="main">
-	<div class="section">
-		<div class="row row_wrp">
-			<div class="col-12">
-				<h1 class="title">100% рабочая схема заработка в интернете<br> от 1000$ и выше, даже с нуля</h1>
-			</div>
-		</div>
-		<div class="row row_wrp row_col-middle">
-			<div class="col-7">
-				<!--VIDEO/-->
-				<div class="video">
-					<div class="video__preview cover-img-wrap">
-						<img src="/images/6steps-package.jpg" class="cover-img" alt="thumbnail">
-					</div>
-					<button type="button" data-src="https://www.youtube.com/embed/AfXWkRV0_WI" class="video__btn-play"></button>
-					<div class="video__frame"></div>
+	<div class="full-page full-page_middle">
+		<div class="full-page_middle__inner">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="title">100% рабочая схема заработка в интернете<br> от 1000$ и выше, даже без вложений</h1>
 				</div>
-				<!--/VIDEO-->
-			</div>
-			<div class="col-5">
-				<?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/subscribe-block.php'; ?>
-			</div>
-		</div>
-	</div>
-
-	<div id="program-anchor" class="section bg-gray0">
-		<div class="row row_wrp">
-			<div class="col-12">
-				<h2 class="title">Программа курса</h2>
-			</div>
-			<div class="col-12 ta-c">
-				<strong>Курс рассчитан на 6 дней и состоит из 6-ти видео уроков</strong>
-			</div>
-			<div class="col-7 col_center">
-				<ol class="list">
-					<li>
-						Энергетический сеанс “Освобождение от сладкомании”
-					</li>
-					<li>
-						Как сделать так, чтобы Ваш организм худел “сам”?
-					</li>
-					<li>
-						Избавление от  пищевой зависимости
-					</li>
-					<li>
-						Оздоровительное похудание проходит без особых усилий
-					</li>
-					<li>
-						Упражнение от целлюлита
-					</li>
-					<li>
-						О том, как худеть радостно
-					</li>
-				</ol>
-			</div>
-		</div>
-		<div class="row row_wrp mt-30">
-			<div class="col-5 col_center">
-				<?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/subscribe-block.php'; ?>
-			</div>
-		</div>
-	</div>
-
-	<div id="author-anchor" class="section">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="title">О авторе курса</h2>
-			</div>
-		</div>
-		<div class="row row_wrp">
-			<div class="col-10 col_center">
-				<div class="article">
-					<p>
-						<strong>Галина Николаевна Гроссманн</strong> училась на биолога в Красноярском университете, позже защитила диссертацию. Научную карьеру начала в Институте Физики Академии Наук СССР. Принимала участие в космических программах в Институте Экспериментальной Биологии АН СССР.
-					</p>
-					<p>
-						С 1996 года возглавляет Центр биологии и экологии человека в Эстонии, где продолжает свою исследовательскую и практическую деятельность. Она регулярно проводит сеансы по омоложению организма и сбросу лишнего веса.
-					</p>
-					<p>
-						Помогла множеству людей победить недуг переедания и болезненной избыточности веса. Записала большое число видео курсов, регулярно проводит тренинги, мастер-классы и вебинары, даёт консультации.
-					</p>
-					<p>
-						Сеансы омоложения Галины Николаевны и методика снятия возрастного комплекса помогают уменьшить влияние отрицательных факторов, продлить жизнь человека, замедлить процессы старения.
-					</p>
+				<div class="col-12">
+					<?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/subscribe-block.php'; ?>
 				</div>
-			</div>
-		</div>
-		<div class="row row_wrp mt-30">
-			<div class="col-5 col_center">
-				<?php include $_SERVER['DOCUMENT_ROOT'] .'/inc/subscribe-block.php'; ?>
 			</div>
 		</div>
 	</div>

@@ -58,8 +58,8 @@ html, body {
 html, body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  color: #212121;
-  background: #ffffff;
+  color: #000000;
+  background: #000000;
   height: 100%;
 }
 
@@ -806,13 +806,13 @@ hr {
   letter-spacing: 1px;
   color: #FFF;
   padding: 0 15px;
-  height: 43px;
+  height: 44px;
   line-height: normal;
   text-align: center;
   text-decoration: none;
   vertical-align: bottom;
   border: none;
-  background: #212121;
+  background: #000000;
   user-select: none;
   position: relative;
   transition: .5s;
@@ -834,6 +834,17 @@ hr {
   content: "";
   position: absolute;
   top: 50%;
+}
+
+.btn {
+  background: #DE0000;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: #ff0000;
 }
 
 .arrow-btn {
@@ -861,6 +872,7 @@ hr {
 
 /*link*/
 .link {
+  font-size: 12px;
   text-decoration: none;
   color: #0000ff;
   border-bottom: 1px solid #0000ff;
@@ -1131,7 +1143,7 @@ hr {
 }
 
 .menu__item_current .menu__a {
-  border-bottom-color: #212121;
+  border-bottom-color: #000000;
 }
 
 .menu__a {
@@ -1207,7 +1219,7 @@ hr {
 }
 
 .sub-menu__item_current .sub-menu__a {
-  border-bottom-color: #212121;
+  border-bottom-color: #000000;
 }
 
 .sub-menu__a {
@@ -1313,7 +1325,7 @@ hr {
 
 .video__frame {
   z-index: 3;
-  background: #212121;
+  background: #000000;
   display: none;
 }
 
@@ -1455,6 +1467,7 @@ hr {
   background: none;
   border: none;
   -webkit-appearance: none;
+  backface-visibility: hidden;
 }
 
 .popup-close-btn:after, .popup-close-btn:before {
@@ -1477,7 +1490,7 @@ hr {
 }
 
 .popup-close-btn:hover:after, .popup-close-btn:hover:before {
-  background: #212121;
+  background: #000000;
 }
 
 .popup__inner {
@@ -1551,18 +1564,19 @@ hr {
   width: 100%;
   height: 44px;
   padding: 12px 15px;
-  border: 1px solid #aaaaaa;
-  border-radius: 6px;
+  border: none;
   background: #FFF;
   transition: .5s;
 }
 
-.form__text-input:hover, .form__textarea:hover, .form__text-input:focus, .form__textarea:focus {
-  box-shadow: 2px 1px 21px rgba(0, 0, 0, 0.21);
+.form .row {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-.form__text-input:focus, .form__textarea:focus {
-  border-color: #212121;
+.form .row > div[class*="col"] {
+  padding-left: 7px;
+  padding-right: 7px;
 }
 
 .form__textarea {
@@ -1625,14 +1639,10 @@ hr {
   opacity: .5;
 }
 
-.form__submit {
-  background: #DE0000;
-  color: #fff;
-  border-radius: 6px;
-}
-
-.form__submit:hover {
-  background: #ff0000;
+.form__txt {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #ffffff;
 }
 
 .form__loader {
@@ -1641,11 +1651,6 @@ hr {
   margin: 30px 0;
   overflow: hidden;
   display: none;
-}
-
-.form__txt {
-  font-size: 11px;
-  line-height: 1.3;
 }
 
 .form_sending .form__loader {
@@ -1664,7 +1669,7 @@ hr {
 }
 
 .form_sending .form__submit:before {
-  background: #212121;
+  background: #000000;
   z-index: 2;
 }
 
@@ -1885,6 +1890,8 @@ hr {
 /*main*/
 .main {
   padding-top: 80px;
+  background: url("../images/money.jpg") no-repeat 50% 50%;
+  background-size: cover;
 }
 
 @media (max-width: 1000px) {
@@ -1895,7 +1902,6 @@ hr {
 
 /*full-page*/
 .full-page {
-  padding-top: 100px;
   overflow: hidden;
 }
 
@@ -1996,6 +2002,8 @@ ol.list li:before {
   font-size: 35px;
   font-weight: 700;
   line-height: 1.3;
+  color: #ffffff;
+  text-shadow: 1px 1px 11px #000000;
   text-align: center;
   margin-bottom: 35px;
 }
@@ -2009,10 +2017,9 @@ ol.list li:before {
 
 /* subscribe block */
 .subscribe {
-  padding: 15px;
-  border: 2px solid #218521;
-  border-radius: 6px;
-  background: #f1f1f1;
+  max-width: 730px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .subscribe__head {

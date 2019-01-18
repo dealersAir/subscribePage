@@ -12,7 +12,7 @@
 	letter-spacing: 1px;
 	color: #FFF;
 	padding: 0 15px;
-	height: 43px;
+	height: 44px;
 	line-height: normal;
 	text-align: center;
 	text-decoration: none;
@@ -41,6 +41,13 @@
 //default btn
 .btn{
 	@extend %btn;
+	background: $rd2;
+	font-size: 17px;
+	font-weight: 700;
+	text-transform: uppercase;
+	&:hover{
+		background: $rd;
+	}
 }
 
 //arrow btn
@@ -75,6 +82,7 @@
 
 /*link*/
 .link{
+	font-size: 12px;
 	text-decoration: none;
 	color: $be;
 	border-bottom: 1px solid $be;

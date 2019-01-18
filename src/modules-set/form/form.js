@@ -1,23 +1,21 @@
 var ValidateForm, Form;
 
 (function () {
-	"use strict";
+	'use strict';
 	
 	// validate form
 	ValidateForm = {
 		input: null,
 		
 		errorTip: function (err, errInd, errorTxt) {
-			var field = this.input.closest('.form__field') || this.input.parentElement,
+			const field = this.input.closest('.form__field') || this.input.parentElement,
 			errTip = field.querySelector('.field-error-tip');
 			
 			if (err) {
 				field.classList.remove('field-success');
 				field.classList.add('field-error');
 				
-				if (!errTip) {
-					return;
-				}
+				if (!errTip) return;
 				
 				if (errInd) {
 					if (!errTip.hasAttribute('data-error-text')) {
@@ -34,9 +32,7 @@ var ValidateForm, Form;
 		},
 		
 		customErrorTip: function (input, errorTxt) {
-			if (!input) {
-				return;
-			}
+			if (!input) return;
 			
 			this.input = input;
 			
@@ -173,8 +169,7 @@ var ValidateForm, Form;
 			
 			return err;
 		},
-		
-		
+
 		checkbox: function (elem) {
 			this.input = elem;
 			
@@ -315,7 +310,7 @@ var ValidateForm, Form;
 			for (var i = 0; i < elements.length; i++) {
 				var elem = elements[i];
 				
-				if (elem.elementIsHidden()) {
+				if (elemIsHidden(elem)) {
 					continue;
 				}
 				
@@ -347,7 +342,7 @@ var ValidateForm, Form;
 			for (var i = 0; i < elements.length; i++) {
 				var elem = elements[i];
 				
-				if (elem.parentElement.elementIsHidden()) {
+				if (elemIsHidden(elem.parentElement)) {
 					continue;
 				}
 				
@@ -362,7 +357,7 @@ var ValidateForm, Form;
 			for (var i = 0; i < elements.length; i++) {
 				var elem = elements[i];
 				
-				if (elem.elementIsHidden()) {
+				if (elemIsHidden(elem)) {
 					continue;
 				}
 				
@@ -385,7 +380,7 @@ var ValidateForm, Form;
 				var group = groups[i],
 				checkedElements = 0;
 				
-				if (group.elementIsHidden()) {
+				if (elemIsHidden(group)) {
 					continue;
 				}
 				
@@ -414,7 +409,7 @@ var ValidateForm, Form;
 				var group = groups[i],
 				checkedElement = false;
 				
-				if (group.elementIsHidden()) {
+				if (elemIsHidden(group)) {
 					continue;
 				}
 				
@@ -442,7 +437,7 @@ var ValidateForm, Form;
 			for (var i = 0; i < elements.length; i++) {
 				var elem = elements[i];
 				
-				if (elem.elementIsHidden()) {
+				if (elemIsHidden(elem)) {
 					continue;
 				}
 				
@@ -466,7 +461,7 @@ var ValidateForm, Form;
 			for (var i = 0; i < elements.length; i++) {
 				var elem = elements[i];
 				
-				if (elem.elementIsHidden()) {
+				if (elemIsHidden(elem)) {
 					continue;
 				}
 				
@@ -574,6 +569,7 @@ var ValidateForm, Form;
 			formElem.classList.add('form_sending');
 			
 			if (!this.onSubmit) {
+				formElem.submit();
 				return;
 			}
 			
@@ -609,7 +605,7 @@ var ValidateForm, Form;
 				for (var i = 0; i < elements.length; i++) {
 					var elem = elements[i];
 					
-					if (!elem.elementIsHidden()) {
+					if (!elemIsHidden(elem)) {
 						if (st) {
 							elem.removeAttribute('disabled');
 						} else {
@@ -634,8 +630,9 @@ var ValidateForm, Form;
 			
 			if (ret === false) {
 				e.preventDefault();
-				
 				actSubmitBtn(false);
+			} else {
+				formElem.submit();
 			}
 		},
 		
@@ -644,17 +641,33 @@ var ValidateForm, Form;
 			
 			ValidateForm.init(formSelector);
 			
+			// submit event
 			document.addEventListener('submit', (e) => {
 				var formElem = e.target.closest(formSelector);
 				
-				if (!formElem) {
-					return;
-				}
+				if (!formElem) return;
 				
 				if (ValidateForm.validate(formElem)) {
 					this.submit(e, formElem);
 				} else {
 					e.preventDefault();
+				}
+			});
+			
+			// keyboard event
+			document.addEventListener('keydown', (e) => {
+				var formElem = e.target.closest(formSelector);
+				
+				if (!formElem) return;
+				
+				var key = e.which || e.keyCode || 0;
+				
+				if (e.ctrlKey && key == 13) {
+					e.preventDefault();
+
+					if (ValidateForm.validate(formElem)) {
+						this.submit(e, formElem);
+					}
 				}
 			});
 		}
@@ -675,7 +688,7 @@ var ValidateForm, Form;
 			}
 		}
 	}
-
+	
 	// duplicate form
 	var DuplicateForm = {
 		add: function (btnElem) {
@@ -746,7 +759,7 @@ var ValidateForm, Form;
 		for (let i = 0; i < elements.length; i++) {
 			var elem = elements[i];
 			
-			if (!elem.elementIsHidden()) {
+			if (!elemIsHidden(elem)) {
 				elem.setAttribute('tabindex', i + 1);
 			}
 		}

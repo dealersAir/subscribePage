@@ -79,6 +79,7 @@
 		background: none;
 		border: none;
 		-webkit-appearance: none;
+		backface-visibility: hidden;
 		&:after,
 		&:before{
 			@extend %ab;

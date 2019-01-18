@@ -70,8 +70,10 @@
 			opacity: .5;
 		}
 	}
-	&__submit{
-		background: $rd;
+	&__txt{
+		font-size: 14px;
+		line-height: 1.45;
+		color: #ffffff;
 	}
 	&__loader{
 		height: 3px;
