@@ -7,7 +7,7 @@ $send_count_requets -> execute(array('send_email_period_start', 'sent_emails_cou
 $send_count = $send_count_requets -> fetchAll(PDO::FETCH_OBJ);
 
 $send_count_arr = array();
-$dsa = 'dsa';
+
 foreach ($send_count as $val) {
 	$send_count_arr[$val -> option_name] = $val -> option_value;
 }
