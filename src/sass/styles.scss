@@ -45,11 +45,10 @@
 /*list*/
 .list{
 	list-style: none;
-	color: #ffffff;
 	li{
-		line-height: 1.45;
+		line-height: 1.6;
 		padding-left: 30px;
-		margin-top: em(30);
+		margin-top: em(25);
 		@include fch(t);
 		position: relative;
 		&:before{
@@ -141,9 +140,6 @@ ol.list{
 			color: $gn2;
 			padding-top: 10px;
 		}
-	}
-	.link{
-		font-size: 12px;
 	}
 	@media(max-width: 750px){
 		padding: 10px 0 20px;

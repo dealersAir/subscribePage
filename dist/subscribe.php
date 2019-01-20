@@ -33,6 +33,5 @@ $add_subscriber->execute(array(
 	'u_subscribe' => 1
 ));
 
-exit('/all-resources.php');
-// require_once $_SERVER['DOCUMENT_ROOT'] .'/mailer.php';
+require_once $_SERVER['DOCUMENT_ROOT'] .'/mailer.php';
 ?>

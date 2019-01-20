@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	}); */
 	
 	// add js-all-res link
-	function setAllResLink(href) {
+	function setAllResLink(hrefStr) {
 		var linkElements = document.querySelectorAll('.js-all-res');
 		
 		for (var i = 0; i < linkElements.length; i++) {
-			linkElements[i].href = href;
+			linkElements[i].href = hrefStr;
 		}
 	}
 	
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					
 					callback({clearForm: false, unlockSubmitButton: true});
 				} else {
-					setAllResLink(response);
+					setAllResLink('/all-resources.php');
 
 					Popup.open('#email-alternative');
 					

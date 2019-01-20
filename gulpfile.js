@@ -43,7 +43,7 @@ var modulesOn = [
 	// 'numberspin',
 	// 'share',
 	// 'timer',
-	// 'footer',
+	'footer',
 	// 'getcontentajax',
 	// 'mouseparallax',
 	// 'floatslider',

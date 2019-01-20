@@ -17,7 +17,7 @@
 	background: #000;
 	background: rgba(0,0,0,.5);
 	font-size: 0;
-	
+	color: $bk;
 	&_visible{
 		display: block;
 	}
@@ -118,6 +118,10 @@
 	&__title{
 		font-size: 20px;
 	}
+}
+
+.popup-program{
+	max-width: 415px;
 }
 
 /*popup-message*/

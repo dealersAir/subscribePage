@@ -29,27 +29,86 @@ require $_SERVER['DOCUMENT_ROOT'] .'/PHPMailer/Exception.php';
 require $_SERVER['DOCUMENT_ROOT'] .'/PHPMailer/PHPMailer.php';
 require $_SERVER['DOCUMENT_ROOT'] .'/PHPMailer/SMTP.php';
 
-$subject = 'Бесплатный видеокурс «6 шагов оздоровительного похудения»';
+$subject = '100% рабочая схема для заработка в интернете. Бесплатный видео-курс';
 
-$utext = 'Здравствуйте!<br>
-
+$utext = 'Здравствуйте!<br> 
+Представляем вам ссылки на все видео-уроки бесплатного курса "100% рабочая схема для заработка в интернете":<br><br> 
+<ol>
+	<li>
+		<a href="https://timofeev-vitali.ru/shema100/base/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100" target="_blank">Общий принцип</a>
+	</li>
+	<li>
+		<a href="https://timofeev-vitali.ru/shema100/action/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100" target="_blank">Что нужно делать</a>
+	</li>
+	<li>
+		<a href="https://timofeev-vitali.ru/shema100/traf/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100" target="_blank">Где и как брать трафик</a>
+	</li>
+	<li>
+		<a href="https://timofeev-vitali.ru/shema100/big/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100" target="_blank">Тренды, или как получать лучшее</a>
+	</li>
+	<li>
+		<a href="https://timofeev-vitali.ru/shema100/pa/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100" target="_blank">Про активы</a>
+	</li>
+	<li>
+		<a href="https://timofeev-vitali.ru/shema100/new/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100" target="_blank">Новинка в теме партнерок</a>
+	</li>
+	<li>
+		<a href="https://timofeev-vitali.ru/shema100/vigoda/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100" target="_blank">Взаимовыгодная схема в партнерках</a>
+	</li>
+	<li>
+		<a href="https://timofeev-vitali.ru/shema100/100/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100" target="_blank">100% схема в партнерках</a>
+	</li>
+	<li>
+		<a href="https://timofeev-vitali.ru/shema100/system/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100" target="_blank">Важные составляющие денежной воронки продаж</a>
+	</li>
+</ol>
 <br><br> 
-
+<b>А также, вы можете получить готовые и уже проверенные на практике кейсы, всего за <i>490руб.</i> &darr;</b><br> 
+<b><a href="https://timofeev-vitali.ru/start/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100&aff_term=paid_start" target="_blank">Кейсы для старта заработка с минимальными вложениями до 1000 руб.</a></b><br><br> 
 Желаем успехов!<br><br> 
-
 Это письмо отправлено автоматически. Если у вас возникли неотложные вопросы, просто нажмите <b>Ответить</b>, не меняйте тему письма.<br> 
+Отказаться от получения писем можно тут: <a href="https://info.dealersair.com/unsubscribe.php?email='. urlencode($rec_email) .'" target="_blank">Отписаться</a><br><br> 
+<a href="https://info.dealersair.com" target="_blank"><img src="https://info.dealersair.com/static/images/info-dealersair.png" alt="iNFO.dealersAir"></a><br><br> 
+<a href="https://scheme100.info.dealersair.com/#disclaimer" target="_blank">Отказ от ответственности</a>';
 
-Отказаться от получения писем можно тут: <a href="https://info.dealersair.com/unsubscribe.php?email='. urlencode($rec_email) .'" target="_blank">Отписаться</a><br><br>
+$plain_text = 'Здравствуйте!
+Представляем вам ссылки на все видео-уроки бесплатного курса "100% рабочая схема для заработка в интернете":
 
-<img src="" alt="iNFO.dealersAir">';
+	* Общий принцип (https://timofeev-vitali.ru/shema100/base/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100) 
 
-$plain_text = '';
+	* Что нужно делать (https://timofeev-vitali.ru/shema100/action/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100) 
+
+	* Где и как брать трафик (https://timofeev-vitali.ru/shema100/traf/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100) 
+
+	* Тренды, или как получать лучшее (https://timofeev-vitali.ru/shema100/big/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100) 
+
+	* Про активы (https://timofeev-vitali.ru/shema100/pa/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100) 
+
+	* Новинка в теме партнерок (https://timofeev-vitali.ru/shema100/new/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100) 
+
+	* Взаимовыгодная схема в партнерках (https://timofeev-vitali.ru/shema100/vigoda/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100) 
+
+	* 100% схема в партнерках (https://timofeev-vitali.ru/shema100/100/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100) 
+
+	* Важные составляющие денежной воронки продаж (https://timofeev-vitali.ru/shema100/system/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100) 
+
+** А также, вы можете получить готовые и уже проверенные на практике кейсы, всего за 490руб. ↓ **
+Кейсы для старта заработка с минимальными вложениями до 1000 руб. (https://timofeev-vitali.ru/start/?utm_medium=affiliate&utm_source=lufter&aff_medium=cpc&aff_source=landing_page&aff_campaign=scheme100&aff_term=paid_start) 
+
+Желаем успехов!
+
+Это письмо отправлено автоматически. Если у вас возникли неотложные вопросы, просто нажмите Ответить, не меняйте тему письма.
+Отказаться от получения писем можно тут: Отписаться (https://info.dealersair.com/unsubscribe.php?email='. urlencode($rec_email) .') 
+
+https://info.dealersair.com 
+
+Отказ от ответственности (https://scheme100.info.dealersair.com/#disclaimer)';
 
 $mail = new PHPMailer();
 $mail -> CharSet = 'UTF-8';
 
-// Server   
-$mail -> isSMTP();                                   
+// Server
+$mail -> isSMTP();
 $mail -> Host = 'info.dealersair.com';
 $mail -> SMTPAuth = true;
 $mail -> Username = SMTP_EMAIL;
@@ -57,13 +116,13 @@ $mail -> Password = SMTP_PASSWORD;
 $mail -> SMTPSecure = 'ssl';
 $mail -> Port = 465;
 
-//Recipients
+// Recipients
 $mail -> setFrom('free@info.dealersair.com', 'iNFO.dealersAir');
 $mail -> addAddress($rec_email);
 $mail -> addReplyTo('free@info.dealersair.com', 'iNFO.dealersAir');
 $mail -> addCustomHeader('List-Unsubscribe', '<mailto:free@info.dealersair.com?body=unsubscribe>, <https://info.dealersair.com/unsubscribe.php?email='. urlencode($rec_email) .'>');
 
-//Content
+// Content
 $mail -> isHTML(true);
 $mail -> Subject = $subject;
 $mail -> Body = $utext;
@@ -72,6 +131,6 @@ $mail -> AltBody = $plain_text;
 if ($mail -> send()) {
 	echo 'sent';
 } else {
-	echo 'Error';
+	echo 'Mailer Error';
 }
 ?>
