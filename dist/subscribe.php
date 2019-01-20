@@ -28,10 +28,11 @@ $add_subscriber = $db->prepare('INSERT INTO subscribers (email,interest) VALUES 
 
 $add_subscriber->execute(array(
 	'email' => $rec_email,
-	'interest' => 'losing_weight',
-	'u_interest' => 'losing_weight',
+	'interest' => 'internet_earnings',
+	'u_interest' => 'internet_earnings',
 	'u_subscribe' => 1
 ));
 
-require_once $_SERVER['DOCUMENT_ROOT'] .'/mailer.php';
+exit('/all-resources.php');
+// require_once $_SERVER['DOCUMENT_ROOT'] .'/mailer.php';
 ?>

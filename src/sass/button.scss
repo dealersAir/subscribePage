@@ -54,13 +54,16 @@
 .arrow-btn{
 	@extend %btn;
 	padding-right: 43px;
-	
+	background: $gy2;
 	&:after{
 		@extend %btn-icon;
 		width: 15px;
 		height: 16px;
 		right: 15px;
 		margin-top: -8px;
+	}
+	&:hover{
+		background: $gy;
 	}
 }
 
@@ -82,13 +85,16 @@
 
 /*link*/
 .link{
-	font-size: 12px;
 	text-decoration: none;
 	color: $be;
 	border-bottom: 1px solid $be;
 	transition: .5s;
 	&_dash{
 		border-bottom-style: dashed;
+	}
+	&_wh{
+		color: #ffffff;
+		border-bottom-color: #ffffff;
 	}
 	&:hover{
 		border-bottom-color: transparent;

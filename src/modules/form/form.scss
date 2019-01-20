@@ -25,6 +25,7 @@
 	}
 	&__field{
 		position: relative;
+		color: $bk;
 		&_hidden{
 			display: none;
 		}
@@ -71,8 +72,8 @@
 		}
 	}
 	&__txt{
-		font-size: 14px;
 		line-height: 1.45;
+		letter-spacing: em(1);
 		color: #ffffff;
 	}
 	&__loader{

@@ -70,8 +70,10 @@
 			opacity: .5;
 		}
 	}
-	&__submit{
-		background: $rd;
+	&__txt{
+		line-height: 1.45;
+		letter-spacing: em(1);
+		color: #ffffff;
 	}
 	&__loader{
 		height: 3px;
@@ -208,9 +210,9 @@
 
 /*field error*/
 .field-error-tip{
-	font-size: 12px;
+	font-size: 14px;
 	color: $rd;
-	padding-top: 3px;
+	padding-top: 5px;
 	display: none;
 }
 

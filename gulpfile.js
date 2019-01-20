@@ -14,15 +14,15 @@ svgSprite = require('gulp-svg-sprite');
 
 // modules
 var modulesOn = [
-	'header',
+	// 'header',
 	// 'header/user',
-	'header/menu',
+	// 'header/menu',
 	// 'fsscroll',
 	// 'scrollsmooth',
 	// 'toggle',
 	// 'flex-image',
-	'cover-image',
-	'video',
+	// 'cover-image',
+	// 'video',
 	'popup',
 	// 'form/checkbox',
 	// 'form/radio',
@@ -37,7 +37,7 @@ var modulesOn = [
 	// 'more',
 	// 'tab',
 	// 'bubble',
-	'anchor',
+	// 'anchor',
 	'alert',
 	// 'diagram',
 	// 'numberspin',

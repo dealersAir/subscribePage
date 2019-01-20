@@ -1,86 +1,51 @@
-document.addEventListener('DOMContentLoaded', function() {
-	(function initFun() {
-		CoverImg.reInit('body');
-		
-		window.addEventListener('winResized', initFun);
-	})();
-
-	// cover images
-	CoverImg.init();
-
+document.addEventListener('DOMContentLoaded', function () {
 	// popup
 	Popup.init('.js-open-popup');
-	
-	// menu
-	if (window.innerWidth < 1000) {
-		Menu.init('.menu__item_has-children', '.menu__sub-menu');
-	}
-	
-	// mobile nav
-	MobNav.init({
-		openBtn: '.js-open-menu',
-		closeBtn: '.js-close-menu',
-		headerId: 'header',
-		menuLinkSelector: '.menu a'
-	});
-	
-	// anchor
-	Anchor.init('.js-anchor', 700, 80);
-	
-	// alert
-	new Alert({
-		content: 'На нашем веб-сайте используются файлы cookies, которые позволяют улучшить Ваше взаимодействие с сайтом.<br> Когда вы посещаете данный веб-сайт, Вы даете согласие на использование файлов cookies.',
-		showOnce: true
-	});
 
-	// video
-	Video.init('.video__btn-play');
-	
+	/* // alert
+ new Alert({
+ 	content: 'На нашем веб-сайте используются файлы cookies, которые позволяют улучшить Ваше взаимодействие с сайтом.<br> Когда вы посещаете данный веб-сайт, Вы даете согласие на использование файлов cookies.',
+ 	showOnce: true
+ }); */
+
+	// add js-all-res link
+	function setAllResLink(href) {
+		var linkElements = document.querySelectorAll('.js-all-res');
+
+		for (var i = 0; i < linkElements.length; i++) {
+			linkElements[i].href = href;
+		}
+	}
+
 	// submit form
 	Form.init('.form');
-	
-	Form.onSubmit = function(form, callback) {
+
+	Form.onSubmit = function (form, callback) {
 		ajax({
 			url: form.action,
 			send: new FormData(form),
-			success: function(response) {
+			success: function success(response) {
 				if (response == 'sent') {
-					Popup.message('#message-popup', 'Мы отправили письмо со ссылкой на курс на указанный вами e-mail.<br> <span class="c-red">Иногда, письмо может попадать в папку <b>спам</b>.</span>');
-					
-					ym(51865784, 'reachGoal', 'sent_email');
-					
-					callback({clearForm: true, unlockSubmitButton: true});
+					Popup.message('#message-popup', 'Мы отправили письмо со ссылками на все видео-уроки на указанный вами e-mail.<br> <span class="c-red">Иногда, письмо может попадать в папку <b>спам</b>.</span><br> Если в течение 10-15 минут письмо не пришло, пожалуйста, отправьте ваш e-mail ещё раз.');
+
+					callback({ clearForm: false, unlockSubmitButton: true });
 				} else {
-					var inpElem = form.querySelector('input[name="name"]'),
-					sbscNameElem = document.getElementById('subscriber-name');
-					
-					if (inpElem.value.length) {
-						sbscNameElem.innerHTML = ', '+ inpElem.value;
-					}
-					
+					setAllResLink(response);
+
 					Popup.open('#email-alternative');
 
-					ym(51865784, 'reachGoal', 'show_popup');
-
-					callback({clearForm: false, unlockSubmitButton: true});
+					callback({ clearForm: false, unlockSubmitButton: true });
 				}
 			},
-			error: function(response) {
-				var inpElem = form.querySelector('input[type="name"]'),
-				sbscNameElem = document.getElementById('subscriber-name');
-				
-				if (inpElem.value.length) {
-					sbscNameElem.innerHTML = ', '+ inpElem.value;
-				}
-				
-				Popup.open('#email-alternative');
+			error: function error() {
+				setAllResLink('/all-resources.php');
 
-				ym(51865784, 'reachGoal', 'show_popup');
+				Popup.open('#email-alternative-2');
 
-				callback({clearForm: false, unlockSubmitButton: true});
+				callback({ clearForm: false, unlockSubmitButton: true });
 			}
 		});
-		
+
 		return false;
-	}
+	};
 });
