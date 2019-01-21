@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
 					
 					callback({clearForm: false, unlockSubmitButton: true});
 				}
+
+				ym(51992852, 'reachGoal', 'sent_form');
 			},
 			error: function() {
 				setAllResLink('/all-resources.php');
