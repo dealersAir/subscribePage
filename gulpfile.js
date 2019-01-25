@@ -37,7 +37,7 @@ var modulesOn = [
 	// 'more',
 	// 'tab',
 	// 'bubble',
-	// 'anchor',
+	'anchor',
 	'alert',
 	// 'diagram',
 	// 'numberspin',

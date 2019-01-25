@@ -4,12 +4,12 @@
 @import "../../sass/mixins";
 
 .footer{
-	background: #FFF;
-	box-shadow: 0 -1px 11px rgba(0,0,0,.21);
+	background: $bk;
 	&__logo{
+		display: inline-block;
+		width: 120px;
 		img{
 			width: 100%;
-			max-width: 121px;
 			height: auto;
 		}
 	}
@@ -33,13 +33,17 @@
 		}
 	}
 	&__a{
-		color: $be;
+		font-size: 14px;
+		color: $gy2;
 		letter-spacing: 0.8px;
 		text-decoration: none;
 		border-bottom: 1px solid transparent;
 		transition: .5s;
+		&_dash{
+			border-bottom-style: dashed;
+		}
 		&:hover{
-			border-bottom-color: $be;
+			border-bottom-color: $gy2;
 		}
 	}
 }

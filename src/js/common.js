@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
+	const fsElem = document.getElementById('js-first-screen');
+
+	(function initFun() {
+		if (fsElem) {
+			fsElem.style.height = window.innerHeight +'px';
+		}
+		
+		window.addEventListener('winResized', initFun);
+	})();
+
+	// anchor
+	Anchor.init('.js-anchor', 1000);
+
 	// popup
 	Popup.init('.js-open-popup');
 	

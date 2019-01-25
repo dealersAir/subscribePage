@@ -12,7 +12,7 @@ $sprite-width: 2192;
 	@include bgs(340);
 }
 
-.accord__button:after{
+.down-btn:after{
 	@extend %svg-arrow-alt-circle-down;
 	@include bgs(512);
 }
