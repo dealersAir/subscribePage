@@ -5,12 +5,9 @@
 
 /*main*/
 .main{
-	/* background: url("../images/money.jpg") no-repeat 0 0, url("../images/money-r.jpg") no-repeat 100% 0;
-	background-size: auto 100%;
-	background-attachment: fixed; */
-	&, &__full-page{
+	/* &, &__full-page{
 		
-	}
+	} */
 	&__full-page{
 		@extend %fwh;
 	}
